@@ -12,7 +12,7 @@ slimes=( $(ls $EXEDIR | grep -vE '^[0-9]{2}') )
 # Create slime html
 for color in ${slimes[@]}; do
     slime_text=$EXEDIR/$color
-    slime_html=$HTMLDIR/$color
+    slime_html=$HTMLDIR/${color}.html
     slime_image=$IMAGEDIR/$color
     if [ ! -e $slime_image ]; then
         cat $slime_text | ansi2html > $slime_html
